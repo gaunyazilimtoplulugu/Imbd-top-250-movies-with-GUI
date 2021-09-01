@@ -1,34 +1,9 @@
-
-from PyQt5 import QtCore, QtGui, QtWidgets
 import requests
 from bs4 import BeautifulSoup 
-import sys
-import xlsxwriter
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget
-from PyQt5.QtGui import QIcon
-import numpy as np
-import pandas as pd
-from random import randint
-from PyQt5 import QtCore, QtGui, QtWidgets
-
-import sys
-import xlsxwriter
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget
-from PyQt5.QtGui import QIcon
-import numpy as np
-import pandas as pd
-from random import randint
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 from PyQt5.QtWidgets import QTableWidgetItem
-import xlsxwriter
-# message box ekleyecem ve text edit koyacam list view ile önce göstert
-from PyQt5.QtWidgets import QMessageBox
-import time
-import smtplib
-import mimetypes
-from email.message import EmailMessage
-import pandas as pd
 
 class AnotherWindow(QWidget):
     def __init__(self):
