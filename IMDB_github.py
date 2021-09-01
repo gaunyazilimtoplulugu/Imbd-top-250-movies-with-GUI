@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QTableWidgetItem
 class AnotherWindow(QWidget):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle('Movies')
 
         self.table_products = QtWidgets.QTableWidget(self)
         self.table_products.setGeometry(QtCore.QRect(10, 30, 801, 591))
