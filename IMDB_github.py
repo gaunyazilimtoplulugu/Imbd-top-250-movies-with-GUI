@@ -1,15 +1,16 @@
+
 import requests
 from bs4 import BeautifulSoup 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAbstractItemView
 from PyQt5.QtWidgets import QTableWidgetItem
 
 class AnotherWindow(QWidget):
     def __init__(self):
         super().__init__()
+        
         self.setWindowTitle('Movies')
-
         self.table_products = QtWidgets.QTableWidget(self)
         self.table_products.setGeometry(QtCore.QRect(10, 30, 801, 591))
         self.table_products.setObjectName("table_products")
@@ -43,6 +44,8 @@ class AnotherWindow(QWidget):
             self.table_products.setItem(row,1,QTableWidgetItem(str(year)))
             self.table_products.setItem(row,2,QTableWidgetItem(str(rating)))
             row +=1
+        self.table_products.setSelectionBehavior(QAbstractItemView.SelectRows) # satır satır seçer
+        self.table_products.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers) #seçilemez yaptık
             
 class MyWindow(QMainWindow):
     def __init__(self):
@@ -79,6 +82,7 @@ class MyWindow(QMainWindow):
         self.label.setText(_translate("MainWindow", "IMDB MOST POPULAR TOP 250 MOVIES"))
         self.pushButton.setText(_translate("MainWindow", "BRING"))
         self.pushButton.clicked.connect(self.getir)
+        
 
     def getir(self):
         self.x.show()
